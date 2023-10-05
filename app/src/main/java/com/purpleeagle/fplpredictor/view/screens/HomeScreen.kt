@@ -19,6 +19,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
+import com.purpleeagle.fplpredictor.model.functions.bestAveragePosition
 
 @Composable
 fun HomeScreen(
@@ -33,7 +34,11 @@ fun HomeScreen(
         Button(onClick = { onEvent(Events.StartClicked) }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "start")
         }
-        Text(text = state.load)
+        Text(
+            text =
+                if(state.load!="") state.load
+                else state.bestAveragePosition()
+        )
         TabRow(selectedTabIndex = tabIndex) {
             tabTitles.forEachIndexed { index, s ->
                 Tab(

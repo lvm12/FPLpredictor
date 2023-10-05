@@ -64,7 +64,7 @@ fun calculate(
         return 0f
     }
     return try{
-        var chanceOfPlaying = (element.chanceOfPlayingThisRound.toString().toFloatOrNull() ?: 0f)/100
+        var chanceOfPlaying = (((element.chanceOfPlayingThisRound.toString().toFloatOrNull() ?: 0f)+(element.chanceOfPlayingNextRound.toString().toFloatOrNull()?:0f))/2)/100
         if (chanceOfPlaying == 0f){
             chanceOfPlaying = 1f
         }
@@ -98,7 +98,7 @@ fun calculate(
         if(nextDifficulty == 0f){
             nextDifficulty = 1f
         }
-        val score = chanceOfPlaying*((pointsPerGame+formAverage+ictAverage)/nextDifficulty)
+        val score = chanceOfPlaying*((pointsPerGame+formAverage+ictAverage+element.dreamteamCount.toIntOr(0)*2)/nextDifficulty)
         log = Log.d("Calculate${element.webName}", "Score is $score")
         score
     }catch(e: Exception){
