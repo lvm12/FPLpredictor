@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.purpleeagle.fplpredictor.Scores
 import com.purpleeagle.fplpredictor.model.functions.roundToDecimalPlaces
 import com.purpleeagle.fplpredictor.model.models.enums.DataHolder
 
@@ -28,6 +29,29 @@ fun PlayerItem(
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
             Column(horizontalAlignment = Alignment.End) {
                 Text(text = "£${(dataHolder.player.nowCost.toString().toFloatOrNull() ?: 0f) / 10}")
+            }
+        }
+    }
+}
+
+@Composable
+fun PlayerItem(
+    scores: Scores
+) {
+    Box{
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterStart) {
+            Column(horizontalAlignment = Alignment.Start) {
+                Text(text = scores.name)
+            }
+        }
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(text = scores.score.roundToDecimalPlaces(2).toString())
+            }
+        }
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
+            Column(horizontalAlignment = Alignment.End) {
+                Text(text = "£${(scores.cost/10)}")
             }
         }
     }

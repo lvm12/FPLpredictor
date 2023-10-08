@@ -1,5 +1,6 @@
 package com.purpleeagle.fplpredictor.viewmodel.states
 
+import com.purpleeagle.fplpredictor.Scores
 import com.purpleeagle.fplpredictor.model.models.bootstrapstatic.BootStrapModel
 import com.purpleeagle.fplpredictor.model.models.bootstrapstatic.Player
 import com.purpleeagle.fplpredictor.model.models.elementsummary.ElementSummary
@@ -15,5 +16,10 @@ data class TestState(
     val attackerList: List<DataHolder> = emptyList(),
     val midfielderList: List<DataHolder> = emptyList(),
     val defenderList: List<DataHolder> = emptyList(),
-    val goalkeeperList: List<DataHolder> = emptyList()
+    val goalkeeperList: List<DataHolder> = emptyList(),
+    val offlineList: List<Scores> = emptyList(),
+    val offlineAttackerList: List<Scores>  = emptyList(),
+    val offlineMidfielderList: List<Scores> = emptyList(),
+    val offlineDefenderList: List<Scores> = emptyList(),
+    val offlineGoalkeeperList: List<Scores> = emptyList()
 )

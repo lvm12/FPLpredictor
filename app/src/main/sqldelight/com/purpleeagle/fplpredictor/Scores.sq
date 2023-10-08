@@ -1,0 +1,24 @@
+CREATE TABLE Scores(
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   name TEXT NOT NULL,
+   score REAL NOT NULL,
+   position INTEGER NOT NULL,
+   cost REAL NOT NULL
+);
+
+
+selectAll:
+SELECT * FROM Scores;
+
+
+insertPlayer:
+INSERT INTO Scores(name, score, position, cost)
+VALUES ?;
+
+
+deleteTable{
+   DELETE FROM Scores;
+}
+
+vacuumTable:
+VACUUM;
