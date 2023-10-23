@@ -12,3 +12,6 @@ The formula takes:
   all multiplied by the chance of playing
 
 Update: IT WORKS
+
+Gameweek: Score
+9: 102
