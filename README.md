@@ -10,3 +10,5 @@ The formula takes:
   all divided by
   the average difficulty of the next 3 gameweeks
   all multiplied by the chance of playing
+
+Update: IT WORKS
